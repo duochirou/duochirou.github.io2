@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Python1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/廖雪峰Git教程+学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自己就要多吃肉">
@@ -292,8 +292,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/19/Python1/" itemprop="url">
-                  Python基础
+                <a class="post-title-link" href="/2017/09/01/廖雪峰Git教程+学习笔记/" itemprop="url">
+                  廖雪峰Git教程学习笔记
                 </a>
               
             
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T00:00:00+08:00">
-                2017-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T00:00:00+08:00">
+                2017-09-01
               </time>
             
 
@@ -332,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">-Python</span>
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">-其他</span>
                   </a>
                 </span>
 
@@ -369,65 +369,277 @@
       
         
           
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.version</div></pre></td></tr></table></figure>
-<pre><code>&apos;3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 12:30:02) [MSC v.1900 64 bit (AMD64)]&apos;
-</code></pre><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>高级语言需要翻译成机器语言，翻译方式：</p>
+            <h1 id="廖雪峰Git教程-学习笔记"><a href="#廖雪峰Git教程-学习笔记" class="headerlink" title="廖雪峰Git教程 学习笔记"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰Git教程</a> 学习笔记</h1><h2 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h2><p>Git是目前世界上最先进的分布式版本控制系统</p>
+<h3 id="集中式vs分布式"><a href="#集中式vs分布式" class="headerlink" title="集中式vs分布式"></a>集中式vs分布式</h3><p>CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统。</p>
+<p>集中式<br><img src="https://www.liaoxuefeng.com/files/attachments/001384860735706fd4c70aa2ce24b45a8ade85109b0222b000/0" alt="集中式"><br>分布式</p>
 <ul>
-<li>编译 不可移植，C/C++</li>
-<li>解释 运行一行执行一行</li>
+<li>首先，分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。</li>
+<li>那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</li>
+<li>分布式版本控制系统通常也有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。<br><img src="https://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0" alt="分布式"></li>
 </ul>
-<p>Python 是解释型高级动态编程语言</p>
-<p>动态编程语言：运行时可改变其结构，Python/JavaScript</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>略</p>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p><img src="images/git1.png" alt="images/git1.png"></p>
 <ul>
-<li>强类型 不容忍隐性类型转换</li>
-<li><p>弱类型 容忍隐性类型转换</p>
+<li><p>所有的版本控制系统，其实只能跟踪文本文件的改动</p>
 </li>
-<li><p>静态类型 编译时就知道每个变量的类型，类型错误是语法错误</p>
+<li><p>Microsoft的Word格式是二进制格式,不是纯文本。</p>
 </li>
-<li>动态类型 类型错误是运行错误</li>
+<li><p>建议使用标准的UTF-8编码，默认编码设置为UTF-8 without BOM即可。</p>
+</li>
+<li><p>千万不要使用Windows自带的记事本编辑任何文本文件。原因是Microsoft开发记事本的团队使用了一个非常弱智的行为来保存UTF-8编码的文件，他们自作聪明地在每个文件开头添加了0xefbbbf（十六进制）的字符，你会遇到很多不可思议的问题，比如，网页第一行可能会显示一个“?”，明明正确的程序一编译就报语法错误，等等，都是由记事本的弱智行为带来的。</p>
+</li>
+<li><p>git add readme.txt # 添加到仓库</p>
+</li>
+<li>git commit -m “wrote a readme file” # 提交到仓库</li>
 </ul>
-<p><img src="/images/StrongStatic.png" alt="image.png"></p>
+<h2 id="时光穿梭"><a href="#时光穿梭" class="headerlink" title="时光穿梭"></a>时光穿梭</h2><p><img src="images/git2.png" alt="images/git2.png"></p>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p><img src="images/git3.png" alt="images/git3.png"></p>
 <ul>
-<li>命令式编程 面向计算机硬件的抽象，程序是冯诺依曼机的指令序列</li>
-<li>函数式编程 面向数字，计算是表达式求值，程序是表达式</li>
+<li>乱七八糟的东西是commit id（版本号）</li>
+<li>用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100</li>
+<li>git reset –hard e11dd  版本号没必要写全，前几位就可以了，Git会自动去找</li>
+<li>git reflog 用来记录你的每一次命令</li>
 </ul>
-<h2 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h2><p>Python 的宗旨就是懒！</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> this</div></pre></td></tr></table></figure>
-<pre><code>The Zen of Python, by Tim Peters
+<p><img src="https://www.liaoxuefeng.com/files/attachments/001384907584977fc9d4b96c99f4b5f8e448fbd8589d0b2000/0" alt=""><br>改为指向add distributed：<br><img src="https://www.liaoxuefeng.com/files/attachments/001384907594057a873c79f14184b45a1a66b1509f90b7a000/0" alt=""><br>然后顺便把工作区的文件更新了。所以你让HEAD指向哪个版本号，你就把当前版本定位在哪。贼快。</p>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><ul>
+<li>工作区（Working Directory）就是你在电脑里能看到的目录</li>
+<li>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。Git的版本库里存了很多东西，其中最重要的就是称为<strong>stage（或者叫index）的暂存区</strong>，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。<br><img src="https://www.liaoxuefeng.com/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0" alt=""></li>
+</ul>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+<ul>
+<li><p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+</li>
+<li><p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+</li>
+<li><p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。</p>
+</li>
+</ul>
+<p>你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0" alt=""><br><img src="https://www.liaoxuefeng.com/files/attachments/0013849077337835a877df2d26742b88dd7f56a6ace3ecf000/0" alt=""></p>
+<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h3><p>为什么Git比其他版本控制系统设计得优秀？<br><br><strong>因为Git跟踪并管理的是修改，而非文件。</strong></p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><ul>
+<li><p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。</p>
+</li>
+<li><p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。</p>
+</li>
+</ul>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><ul>
+<li>确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit</li>
+<li>git checkout – test.txt<br><br>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本</li>
+</ul>
+<h3 id="checkout-与-reset"><a href="#checkout-与-reset" class="headerlink" title="checkout 与 reset"></a>checkout 与 reset</h3><p>git checkout主要有三个作用：</p>
+<ul>
+<li>第一个就是切换分支。例如你从远程仓库clone下来所有的源代码，你git branch一下会看到你通常是在master，如果你想切换到某一个分支上呢？git checkout <branchname></branchname></li>
+<li>第二个就是放弃对某个文件的修改。例如你想放弃对某个文件Hello.cpp的修改，git checkout – <hello.cpp></hello.cpp></li>
+<li>第三个就是新建一个分支，git checkout &lt;-b&gt; <branchname>，不加-b的话只新建不切换到新的分支上，加-b新建并切换到该分支上<br><br></branchname></li>
+</ul>
+<p>git reset主要是取消上一次的操作</p>
+<ul>
+<li>第一个取消merge，git reset –hard ORIG_HEAD，这样会退回到merge前的代码。</li>
+<li>第二个就是取消commit，git eset HEAD~<num> &lt;-soft/-hard&gt;，取消上num次的commit</num></li>
+<li>第三个是将文件从stage（追踪的库）中移除，git reset HEAD <filename></filename></li>
+</ul>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p><strong>SSH</strong>是英文Secure Shell的简写形式。通过使用SSH，你可以把所有传输的数据进行加密，这样”中间人”这种攻击方式就不可能实现了，而且也能够防止DNS欺骗和IP欺骗。使用SSH，还有一个额外的好处就是传输的数据是经过压缩的，所以可以加快传输的速度。SSH有很多功能，它既可以代替Telnet，又可以为FTP、Pop、甚至为PPP提供一个安全的”通道”。</p>
+<h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h3><ul>
+<li><p>要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；</p>
+</li>
+<li><p>关联后，使用命令git push -u origin master第一次推送master分支的所有内容；</p>
+</li>
+<li><p>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；</p>
+</li>
+<li><p>分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步，真是太方便了！</p>
+</li>
+</ul>
+<h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h3><p>git clone …</p>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><img src="https://www.liaoxuefeng.com/files/attachments/001384908633976bb65b57548e64bf9be7253aebebd49af000/0" alt=""></p>
+<h3 id="创建和合并分支"><a href="#创建和合并分支" class="headerlink" title="创建和合并分支"></a>创建和合并分支</h3><p>Git鼓励大量使用分支：</p>
+<ul>
+<li><p>查看分支：git branch</p>
+</li>
+<li><p>创建分支：git branch <name></name></p>
+</li>
+<li><p>切换分支：git checkout <name></name></p>
+</li>
+<li><p>创建+切换分支：git checkout -b <name></name></p>
+</li>
+<li><p>合并某分支到当前分支：git merge <name></name></p>
+</li>
+<li><p>删除分支：git branch -d <name><br><img src="https://www.liaoxuefeng.com/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0" alt=""></name></p>
+</li>
+</ul>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p><strong>这里面冲突一定是不一样的，如果是多的内容它直接就给加到里面了，要注意</strong><br><br>如果冲突，需要手动解决并提交<br><br>用git log –graph命令可以看到分支合并图</p>
+<h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward<br><img src="https://www.liaoxuefeng.com/files/attachments/001384909222841acf964ec9e6a4629a35a7a30588281bb000/0" alt=""><br>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
+<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；<br><br></p>
+<p>当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</p>
+<h3 id="Feature分支和多人合作"><a href="#Feature分支和多人合作" class="headerlink" title="Feature分支和多人合作"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000" target="_blank" rel="external">Feature分支和多人合作</a></h3>
+          
+        
+      
+    </div>
 
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&apos;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&apos;re Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it&apos;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&apos;s do more of those!
-</code></pre><h3 id="Python内存管理方式"><a href="#Python内存管理方式" class="headerlink" title="Python内存管理方式"></a>Python内存管理方式</h3><p>Python采用的是基于值的内存管理方式，如果为不同变量赋值为相同值，这个值在内存中只有一份，多个变量指向同一块内存地址。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">3</span></div><div class="line">print(id(x))</div><div class="line">y = <span class="number">3</span></div><div class="line">print(id(y))</div><div class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">print(id(aList[<span class="number">2</span>]))</div></pre></td></tr></table></figure>
-<pre><code>1368911024
-1368911024
-1368911024
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">id(a) == id(b)</div></pre></td></tr></table></figure>
-<pre><code>False
-</code></pre><h3 id="列表对象内存自动调整"><a href="#列表对象内存自动调整" class="headerlink" title="列表对象内存自动调整"></a>列表对象内存自动调整</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</div><div class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</div><div class="line">        x.remove(i)</div><div class="line">x</div></pre></td></tr></table></figure>
-<pre><code>[2, 1, 3]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x[::]:</div><div class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</div><div class="line">        x.remove(i)</div><div class="line">x</div></pre></td></tr></table></figure>
-<pre><code>[2, 3]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(x)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</div><div class="line">    <span class="keyword">if</span> x[i] == <span class="number">1</span>:</div><div class="line">        <span class="keyword">del</span> x[i]</div><div class="line">x</div></pre></td></tr></table></figure>
-<pre><code>[2, 3]
-</code></pre><h3 id="字符串、元组、数字-不可变"><a href="#字符串、元组、数字-不可变" class="headerlink" title="字符串、元组、数字 不可变"></a>字符串、元组、数字 不可变</h3>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/31/Norm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自己就要多吃肉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/duochirou.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自己就要多吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/31/Norm/" itemprop="url">
+                  Norm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T00:00:00+08:00">
+                2017-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/deeplearning-ai/" itemprop="url" rel="index">
+                    <span itemprop="name">-deeplearning.ai</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h1><p><a href="https://www.zhihu.com/question/20473040?utm_campaign=rss&amp;utm_medium=rss&amp;utm_source=rss&amp;utm_content=title" target="_blank" rel="external">知乎–范数</a></p>
+<ul>
+<li>函数和几何图形往往有对应关系</li>
+<li>高维不好想，所有有了映射；映射表示以个集合通过某种关系转为另一个集合</li>
+<li><p>所以，函数是映射的特例</p>
+</li>
+<li><p>为了更好的表达映射关系，引入矩阵（这里特指线性关系）</p>
+</li>
+<li><p>于是，一个集合（向量），通过一种映射关系（矩阵），得到另外一个集合（另一个向量）</p>
+</li>
+<li><p>向量的范数 表示这个原有集合的大小</p>
+</li>
+<li>矩阵的范数 表示这个变化过程的大小</li>
+</ul>
+<p>具体几几范数，不过是定义不同。<br></p>
+<ul>
+<li>0范数，向量中非零元素的个数。</li>
+<li>1范数，为绝对值之和。</li>
+<li>2范数，就是通常意义上的模。</li>
+</ul>
+<p>linalg = linea r +algebra</p>
+<ul>
+<li>np.linalg.inv()：矩阵求逆</li>
+<li>np.linalg.det()：矩阵求行列式（标量）</li>
+<li><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.norm.html" target="_blank" rel="external">np.linalg.norm()</a></li>
+</ul>
+
           
         
       
@@ -586,6 +798,206 @@ Namespaces are one honking great idea -- let&apos;s do more of those!
 </ul>
 <h2 id="将jupyter-notebook-exe路径添加到path"><a href="#将jupyter-notebook-exe路径添加到path" class="headerlink" title="将jupyter-notebook.exe路径添加到path"></a>将jupyter-notebook.exe路径添加到path</h2><h1 id="具体参考"><a href="#具体参考" class="headerlink" title="具体参考"></a>具体参考</h1><p><a href="http://ipython.readthedocs.io/en/stable/install/kernel_install.html" target="_blank" rel="external">Installing the IPython kernel</a><br><br>覆盖内核（文件）问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter --path</div></pre></td></tr></table></figure></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Python1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自己就要多吃肉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/duochirou.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自己就要多吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/19/Python1/" itemprop="url">
+                  Python基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T00:00:00+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">-Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.version</div></pre></td></tr></table></figure>
+<pre><code>&apos;3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 12:30:02) [MSC v.1900 64 bit (AMD64)]&apos;
+</code></pre><h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>高级语言需要翻译成机器语言，翻译方式：</p>
+<ul>
+<li>编译 不可移植，C/C++</li>
+<li>解释 运行一行执行一行</li>
+</ul>
+<p>Python 是解释型高级动态编程语言</p>
+<p>动态编程语言：运行时可改变其结构，Python/JavaScript</p>
+<ul>
+<li>强类型 不容忍隐性类型转换</li>
+<li><p>弱类型 容忍隐性类型转换</p>
+</li>
+<li><p>静态类型 编译时就知道每个变量的类型，类型错误是语法错误</p>
+</li>
+<li>动态类型 类型错误是运行错误</li>
+</ul>
+<p><img src="/images/StrongStatic.png" alt="image.png"></p>
+<ul>
+<li>命令式编程 面向计算机硬件的抽象，程序是冯诺依曼机的指令序列</li>
+<li>函数式编程 面向数字，计算是表达式求值，程序是表达式</li>
+</ul>
+<h2 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a>Python基础</h2><p>Python 的宗旨就是懒！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> this</div></pre></td></tr></table></figure>
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&apos;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&apos;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&apos;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&apos;s do more of those!
+</code></pre><h3 id="Python内存管理方式"><a href="#Python内存管理方式" class="headerlink" title="Python内存管理方式"></a>Python内存管理方式</h3><p>Python采用的是基于值的内存管理方式，如果为不同变量赋值为相同值，这个值在内存中只有一份，多个变量指向同一块内存地址。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">3</span></div><div class="line">print(id(x))</div><div class="line">y = <span class="number">3</span></div><div class="line">print(id(y))</div><div class="line">aList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">print(id(aList[<span class="number">2</span>]))</div></pre></td></tr></table></figure>
+<pre><code>1368911024
+1368911024
+1368911024
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">b = [<span class="number">1</span>, <span class="number">2</span>]</div><div class="line">id(a) == id(b)</div></pre></td></tr></table></figure>
+<pre><code>False
+</code></pre><h3 id="列表对象内存自动调整"><a href="#列表对象内存自动调整" class="headerlink" title="列表对象内存自动调整"></a>列表对象内存自动调整</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x:</div><div class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</div><div class="line">        x.remove(i)</div><div class="line">x</div></pre></td></tr></table></figure>
+<pre><code>[2, 1, 3]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> x[::]:</div><div class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</div><div class="line">        x.remove(i)</div><div class="line">x</div></pre></td></tr></table></figure>
+<pre><code>[2, 3]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(x)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</div><div class="line">    <span class="keyword">if</span> x[i] == <span class="number">1</span>:</div><div class="line">        <span class="keyword">del</span> x[i]</div><div class="line">x</div></pre></td></tr></table></figure>
+<pre><code>[2, 3]
+</code></pre><h3 id="字符串、元组、数字-不可变"><a href="#字符串、元组、数字-不可变" class="headerlink" title="字符串、元组、数字 不可变"></a>字符串、元组、数字 不可变</h3>
           
         
       
@@ -813,7 +1225,7 @@ Namespaces are one honking great idea -- let&apos;s do more of those!
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -824,7 +1236,7 @@ Namespaces are one honking great idea -- let&apos;s do more of those!
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -835,7 +1247,7 @@ Namespaces are one honking great idea -- let&apos;s do more of those!
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
